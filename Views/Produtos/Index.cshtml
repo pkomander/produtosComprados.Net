@@ -1,0 +1,142 @@
+﻿@model IEnumerable<ProdutosComprados.Models.Produtos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-md-12 panel panel-default">
+    <p>
+        @using (Html.BeginForm("Index", "Produtos", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container">
+                <div class="col-md-3">
+                    <label>Produto:</label>
+                    @Html.DropDownList("Comprado", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="col-sm-1">
+                    <br />
+                    <input type="submit" value="Filtrar" />
+                </div>
+                <div class="col-sm-1">
+                    <br />
+                    @Html.ActionLink("Limpar", "Index", null, new { @class = "btn btn-primary btn-group-justified" })
+                </div>
+            </div>
+        }
+    </p>
+    <div class="col-md-12">
+        <br />
+    </div>
+</div>
+
+@*@using (Html.BeginForm("Index", "Produtos", FormMethod.Get))
+{
+    @Html.TextBox("ProdutoComprado")
+    <input type="submit" value="Pesquisar" />
+}
+
+@using (Html.BeginForm("Index", "Produtos", FormMethod.Get))
+{
+    @Html.ActionLink("Comprado","Index", new { Comprado = ViewBag.Comprado })
+}*@
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoComprado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td class="PrecoProduto">
+                    @Html.DisplayFor(modelItem => item.PrecoProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProdutoComprado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ListaDeProdutosId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ListaDeProdutosId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ListaDeProdutosId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <h1>Valor Total:</h1>
+    <h5>R$ <b id="totalProdutos"></b></h5>
+    <h3>Parcelas</h3>
+    <select id="parcelas" onChange="update()">
+        <option value="1">1x</option>
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+        <option value="4">4x</option>
+        <option value="5">5x</option>
+        <option value="6">6x</option>
+        <option value="7">7x</option>
+        <option value="8">8x</option>
+        <option value="9">9x</option>
+        <option value="10">10x</option>
+        <option value="11">11x</option>
+        <option value="12">12x</option>
+    </select>
+    <input type="text" id="value" readonly>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    //funcionando
+    var preco = document.querySelectorAll(".PrecoProduto");
+    console.log(preco);
+    var auxSoma = 0;
+
+    //A propriedade textContent da interface Node representa o
+    //conteúdo de texto de um nó e dos seus descendentes.
+    //Nota: textContent e HTMLElement.innerText são facilmente confundidos,
+    //mas os dois possuem importantes diferenças entre sí.
+    for (let i = 0; i <= preco.length; i++) {
+        let valor = parseFloat(preco[i].textContent.replace(',', '.'));
+        console.log('valor ' + valor);
+        auxSoma += valor;
+        console.log('x ' + auxSoma);
+        document.getElementById('totalProdutos').innerText = auxSoma.toFixed(2).replace('.', ',');
+    }
+
+    function update() {
+        var select = document.getElementById('parcelas');
+        var option = select.options[select.selectedIndex];
+        var totalProduto = document.getElementById('totalProdutos').innerText;
+
+        var valorParcela = ((totalProduto.replace(',', '.')) / option.value).toFixed(2).replace('.', ',');
+
+        var prestacao = document.getElementById('value').value = 'R$' + valorParcela;
+
+        console.log(prestacao);
+    }
+
+    update();
+</script>
