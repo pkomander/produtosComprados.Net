@@ -22,12 +22,14 @@ namespace ProdutosComprados.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index(string ProdutoComprado)
         {
+            List<Produtos> produtos = new List<Produtos>();
 
             ViewBag.Comprado = new SelectList(Comprado(), ProdutoComprado);
 
             if (ProdutoComprado == "Sim")
             {
-                var comprados = _context.Produtos.Where(x => x.ProdutoComprado == true).ToList();
+                //var comprados = _context.Produtos.Where(x => x.ProdutoComprado == true).ToList();
+                produtos = _context.Produtos.Where(x => x.ProdutoComprado == true).ToList();
             }
 
             return View(await _context.Produtos.ToListAsync());
