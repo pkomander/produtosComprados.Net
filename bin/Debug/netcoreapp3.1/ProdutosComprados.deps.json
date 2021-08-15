@@ -8,9 +8,16 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP3_1"
+      "NETCOREAPP3_1",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER",
+      "NETCOREAPP2_2_OR_GREATER",
+      "NETCOREAPP3_0_OR_GREATER",
+      "NETCOREAPP3_1_OR_GREATER"
     ],
-    "languageVersion": "",
+    "languageVersion": "8.0",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -24,10 +31,13 @@
     ".NETCoreApp,Version=v3.1": {
       "ProdutosComprados/1.0.0": {
         "dependencies": {
+          "DotNet.Highcharts": "4.0.0",
+          "Highsoft.Highcharts": "9.1.2.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.15",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.15",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.15",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
+          "highcharts.js": "7.1.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -302,6 +312,32 @@
         },
         "compile": {
           "ProdutosComprados.dll": {}
+        }
+      },
+      "DotNet.Highcharts/4.0.0": {
+        "runtime": {
+          "lib/DotNet.Highcharts.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/DotNet.Highcharts.dll": {}
+        }
+      },
+      "highcharts.js/7.1.2": {},
+      "Highsoft.Highcharts/9.1.2.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Highcharts.dll": {
+            "assemblyVersion": "9.1.2.2",
+            "fileVersion": "9.1.2.2"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Highcharts.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -952,7 +988,7 @@
       "Microsoft.IdentityModel.JsonWebTokens/5.5.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "5.5.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
@@ -993,7 +1029,7 @@
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.5.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols": "5.5.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.1",
           "System.IdentityModel.Tokens.Jwt": "5.5.0"
         },
         "runtime": {
@@ -1009,7 +1045,7 @@
       "Microsoft.IdentityModel.Tokens/5.5.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "5.5.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "runtime": {
@@ -1041,7 +1077,7 @@
       },
       "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/3.1.5": {
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {
@@ -1057,7 +1093,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.1.15",
           "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "3.1.5",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {
@@ -1119,7 +1155,7 @@
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "3.3.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "3.1.5",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.1",
           "NuGet.Frameworks": "4.7.0"
         },
         "runtime": {
@@ -1207,11 +1243,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.2.21924"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.22727"
           }
         },
         "compile": {
@@ -1735,7 +1771,7 @@
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "5.5.0",
           "Microsoft.IdentityModel.Tokens": "5.5.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
@@ -4000,6 +4036,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DotNet.Highcharts/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MnMMTUQXqoOMPN8GRMWniMm15nqbIAUVS+S8biXPbJW3z2fwz1Fxd5x08uQ5KvZB4+5LskYBOSEtYl00/Z2wMQ==",
+      "path": "dotnet.highcharts/4.0.0",
+      "hashPath": "dotnet.highcharts.4.0.0.nupkg.sha512"
+    },
+    "highcharts.js/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ByLXvAC2S4S0eUS6FEeeRxw6cvIwidInqZ9mNje7iFU3jZQMNbbkbEESu7apnRhSBenuIHHs0Hi4j50UnfuXEg==",
+      "path": "highcharts.js/7.1.2",
+      "hashPath": "highcharts.js.7.1.2.nupkg.sha512"
+    },
+    "Highsoft.Highcharts/9.1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MEw7ZBGzcxORC86N90j0ADkKYJ3qMjV9zYOvx5Qa9NgmA5Eky8p9KwvxKvUVdoQgqa246+6MsdxE4gyJmpu6wQ==",
+      "path": "highsoft.highcharts/9.1.2.2",
+      "hashPath": "highsoft.highcharts.9.1.2.2.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4392,12 +4449,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/11.0.2": {
+    "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
-      "path": "newtonsoft.json/11.0.2",
-      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",

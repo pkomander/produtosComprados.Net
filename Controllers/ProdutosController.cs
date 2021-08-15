@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProdutosComprados.Data;
 using ProdutosComprados.Models;
+using Highsoft.Web.Mvc.Charts;
 
 namespace ProdutosComprados.Controllers
 {
@@ -26,11 +27,51 @@ namespace ProdutosComprados.Controllers
 
             ViewBag.Comprado = new SelectList(Comprado(), ProdutoComprado);
 
+            produtos = _context.Produtos.Where(x => x.ListaDeProdutosId > 0).ToList();
+
+            List<ColumnSeriesData> PrecoData = new List<ColumnSeriesData>();
+            List<LineSeriesData> TotalPreco = new List<LineSeriesData>();
+
+            //produtos = _context.Produtos.Where(x => x.NomeProduto != "").ToList();
+            produtos.ForEach(p => PrecoData.Add(new ColumnSeriesData { Y = p.PrecoProduto }));
+            List<string> precoDataString = new List<string>();
+            produtos.ForEach(p => precoDataString.Add(p.NomeProduto));
+            List<double> totalPreco = new List<double>();
+            double soma = 0.0;
+            //produtos.ForEach(p => TotalPreco.Add(new LineSeriesData { Y = p.PrecoProduto }));
+            foreach (var item in produtos)
+            {
+                soma += item.PrecoProduto;
+                TotalPreco.Add(new LineSeriesData { Y = Math.Round(soma, 2)});
+            }
+
+
+
+            ViewData["PrecoData"] = PrecoData;
+            ViewData["PrecoDataString"] = precoDataString;
+            ViewData["TotalPreco"] = TotalPreco;
+
             if (ProdutoComprado == "Sim")
             {
                 //var comprados = _context.Produtos.Where(x => x.ProdutoComprado == true).ToList();
                 produtos = _context.Produtos.Where(x => x.ProdutoComprado == true).ToList();
+                return View(produtos);
             }
+            else if (ProdutoComprado == "Não")
+            {
+                produtos = _context.Produtos.Where(x => x.ProdutoComprado == false).ToList();
+                return View(produtos);
+            }
+
+            //List<ColumnSeriesData> PrecoData = new List<ColumnSeriesData>();
+
+            //produtos = _context.Produtos.Where(x => x.NomeProduto != "").ToList();
+            //produtos.ForEach(p => PrecoData.Add( new ColumnSeriesData { Y = p.PrecoProduto }));
+            //List<string> precoDataString = new List<string>();
+            //produtos.ForEach(p => precoDataString.Add(p.NomeProduto));
+            //ViewData["PrecoData"] = PrecoData;
+            //ViewData["PrecoDataString"] = precoDataString;
+
 
             return View(await _context.Produtos.ToListAsync());
         }

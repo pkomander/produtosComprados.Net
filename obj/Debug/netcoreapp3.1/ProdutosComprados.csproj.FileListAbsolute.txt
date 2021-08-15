@@ -1,8 +1,6 @@
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\ProdutosComprados.exe
-C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.csprojAssemblyReference.cache
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.AssemblyInfoInputs.cache
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.AssemblyInfo.cs
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.RazorAssemblyInfo.cache
@@ -168,10 +166,13 @@ C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcor
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Create.cshtml.g.cs
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Delete.cshtml.g.cs
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Details.cshtml.g.cs
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Edit.cshtml.g.cs
 C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Index.cshtml.g.cs
+C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.csproj.AssemblyReference.cache
+C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\ProdutosComprados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\obj\Debug\netcoreapp3.1\scopedcss\bundle\ProdutosComprados.styles.css
+C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\Highcharts.dll
+C:\Users\prara\source\repos\ProdutosComprados\ProdutosComprados\bin\Debug\netcoreapp3.1\DotNet.Highcharts.dll
